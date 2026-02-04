@@ -1,0 +1,47 @@
+.love-timeline {
+  padding: 2rem 0;
+}
+
+.timeline-card {
+  background: linear-gradient(135deg, #fff0f6, #ffffff);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 25px rgba(255, 105, 180, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.timeline-card:hover {
+  transform: translateY(-5px);
+}
+
+.title {
+  color: #e91e63;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.date {
+  font-size: 0.9rem;
+  color: #ad1457;
+  font-style: italic;
+}
+
+.text {
+  margin-top: 0.7rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.timeline-icon {
+  background: linear-gradient(135deg, #ff4081, #f50057);
+  color: white;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(245, 0, 87, 0.4);
+  font-size: 1.2rem;
+}

@@ -32,8 +32,11 @@
               }
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/primeicons/primeicons.css",
               "src/styles.scss"
             ],
+
             "scripts": []
           },
           "configurations": {
@@ -91,12 +94,15 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.css"
             ],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "ed149509-583a-4899-92c1-9072890d8564"
   }
 }
