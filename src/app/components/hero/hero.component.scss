@@ -1,8 +1,112 @@
-@keyframes fade {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+.anniversary-hero {
+  min-height: 100vh;
+  background: radial-gradient(
+      circle at top,
+      rgba(244, 114, 182, 0.25),
+      transparent 60%
+    ),
+    linear-gradient(to bottom, #f8cdda, #fff6ea);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
 }
 
-.animate-fade {
-  animation: fade 2s ease-in-out;
+/* Content */
+.hero-content {
+  max-width: 720px;
+  padding: 2rem;
+  z-index: 2;
+}
+
+/* Badge */
+.badge {
+  display: inline-block;
+  background: rgba(244, 114, 182, 0.15);
+  color: #f472b6;
+  padding: 0.4rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  margin-bottom: 1.2rem;
+}
+
+/* Title */
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  font-weight: 800;
+  color: #f472b6;
+  margin-bottom: 1rem;
+}
+
+.hero-title span {
+  display: inline-block;
+  animation: pulse 1.5s infinite;
+}
+
+/* Text */
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: #374151;
+  margin-bottom: 0.8rem;
+}
+
+.hero-dates {
+  font-style: italic;
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+/* Button */
+.hero-btn {
+  padding: 0.9rem 2.2rem;
+  background: linear-gradient(135deg, #f472b6, #fb7185);
+  color: white;
+  border-radius: 999px;
+  font-weight: 600;
+  box-shadow: 0 15px 30px rgba(244, 114, 182, 0.4);
+  transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(244, 114, 182, 0.55);
+}
+
+/* 💌 Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 24px;
+  font-size: 1.8rem;
+  animation: bounce 1.6s infinite;
+  opacity: 0.8;
+}
+
+.petals::before {
+  content: "❤️ 💕 💖 💗";
+  position: absolute;
+  inset: 0;
+  font-size: 2.5rem;
+  opacity: 0.12;
+  display: flex;
+  justify-content: space-around;
+  animation: petalsFall 18s linear infinite;
+  z-index: 1;
+}
+
+/* Animations */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+@keyframes petalsFall {
+  from { transform: translateY(-100px); }
+  to { transform: translateY(100vh); }
 }

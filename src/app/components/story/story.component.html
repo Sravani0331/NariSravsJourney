@@ -1,42 +1,89 @@
-<p-timeline [value]="events" align="alternate" class="love-timeline">
+<section class="container py-5">
+  <h2 class="text-center display-6 fw-bold mb-5 text-pink-600">
+    Our Love Story 💕
+  </h2>
 
-  <!-- Timeline Icon -->
-  <ng-template pTemplate="marker" let-event>
-    <span class="timeline-icon">
-      <i [class]="event.icon"></i>
-    </span>
-  </ng-template>
-
-  <!-- Timeline Content -->
-  <ng-template pTemplate="content" let-event>
-    <div class="timeline-card">
-
-      <h3 class="title">{{ event.title }}</h3>
-      <span class="date">{{ event.date }}</span>
-      <p class="text">{{ event.text }}</p>
-
-      <!-- Engagement Images -->
-      <div class="image-grid" *ngIf="event.images">
-        <img
-          *ngFor="let img of event.images"
-          [src]="img"
-          alt="Engagement Photo"
-        />
+  <div class="row g-4">
+    <!-- Card 1 -->
+    <div class="col-md-6">
+      <div class="story-card h-100 flex align-items-center">
+        <div class="story-content ">
+          <div class="story-header">
+            <h5>First Meet</h5>
+            <span>23 April 2016</span>
+          </div>
+          <p>
+            Among wedding lights and blessings, destiny quietly introduced us ❤️
+          </p>
+        </div>
       </div>
-
-      <!-- Pre-wedding Video -->
-      <div class="video-wrapper" *ngIf="event.youtubeId">
-        <iframe
-          [src]="getYoutubeUrl(event.youtubeId)"
-          width="100%"
-          height="315"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
-      </div>
-
     </div>
-  </ng-template>
 
-</p-timeline>
+    <!-- Card 2 -->
+    <div class="col-md-6">
+      <div class="story-card h-100">
+        <div class="row g-3 align-items-center">
+          <div class="col-md-7">
+            <div class="story-content">
+              <div class="story-header">
+                <h5>Engagement</h5>
+                <span>31 January 2025</span>
+              </div>
+              <p>
+                A promise made with love, smiles, and families together 💍
+              </p>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <img src="images/engagement.JPG" class="story-media" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="col-md-6">
+      <div class="story-card h-100">
+        <div class="row g-3 align-items-center">
+          <div class="col-md-7">
+            <div class="story-content">
+              <div class="story-header">
+                <h5>Pre-Wedding Shoot</h5>
+                <span>4 February 2025</span>
+              </div>
+              <p>Captured our love before the forever began ✨</p>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="ratio ratio-16x9 h-full rounded overflow-hidden">
+              <iframe
+                src="https://www.youtube.com/embed/SFnY951uohk"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="col-md-6">
+      <div class="story-card h-100">
+        <div class="row g-3 align-items-center">
+          <div class="col-md-7">
+            <div class="story-content">
+              <div class="story-header">
+                <h5>Wedding Day</h5>
+                <span>Our Forever Begins</span>
+              </div>
+              <p>Two souls, one promise — we became forever ❤️</p>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <img src="images/mrg.JPG" class="story-media" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
