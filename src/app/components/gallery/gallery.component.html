@@ -1,12 +1,15 @@
 <div class="container py-5">
-  <h2 class="text-center text-3xl text-lovePink mb-4">
+  <h2 class="text-center text-3xl text-lovePink mb-5">
     Our Memories 📸
   </h2>
 
-  <div class="row">
-    <div class="col-md-4 mb-3" *ngFor="let img of [1,2,3,4,5,6]">
-      <img src="assets/images/photo{{img}}.jpg"
-           class="img-fluid rounded shadow hover:scale-105 transition">
+  <div class="row g-4">
+    <div class="col-6 col-md-4" *ngFor="let item of memories; let i = index">
+      <div class="gallery-card">
+        <img src="images/p{{ i + 1 }}.jpeg" alt="{{ item.month }}">
+        <div class="month-label">{{ item.month }}</div>
+        <div class="memory-text">{{ item.text }}</div>
+      </div>
     </div>
   </div>
 </div>
