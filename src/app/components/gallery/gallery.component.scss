@@ -1,54 +1,100 @@
 .gallery-card {
   position: relative;
   width: 100%;
-  height: 260px;
+  height: 240px;
+  border-radius: 20px;
   overflow: hidden;
-  border-radius: 18px;
-  background: linear-gradient(180deg, #fce4ec, #fff);
+  background: linear-gradient(135deg, #fff1f5, #ffffff);
+  box-shadow:
+    0 10px 25px rgba(244, 114, 182, 0.22),
+    inset 0 0 0 1px rgba(244, 114, 182, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Desktop hover – soft lift */
+@media (hover: hover) {
+  .gallery-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow:
+      0 22px 45px rgba(244, 114, 182, 0.45),
+      inset 0 0 0 1px rgba(244, 114, 182, 0.25);
+  }
 }
 
 /* Image */
 .gallery-card img {
   width: 100%;
-  height: auto;
-  max-height: 100%;
+  height: 100%;
   object-fit: contain;
+  padding: 10px;
+  border-radius: 16px;
+  background: white;
 }
 
-/* Bottom overlay for text */
-.gallery-card::after {
-  content: "";
+/* Gradient overlay */
+.overlay {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 72px;
+  inset: 0;
   background: linear-gradient(
     to top,
-    rgba(0, 0, 0, 0.65),
-    rgba(0, 0, 0, 0)
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.2),
+    transparent
   );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 16px;
 }
 
-/* Month label */
+/* Month badge */
 .month-label {
-  position: absolute;
-  bottom: 36px;
-  left: 14px;
-  z-index: 2;
-  font-size: 14px;
-  font-weight: 600;
-  color: #d63384;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #f472b6;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 4px 12px;
+  border-radius: 999px;
+  margin-bottom: 6px;
+  width: fit-content;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 /* Memory text */
 .memory-text {
-  position: absolute;
-  bottom: 14px;
-  left: 14px;
-  right: 14px;
-  z-index: 2;
-  font-size: 12px;
-  color: #fce4ec;
+  font-size: 0.8rem;
+  color: #fff;
   line-height: 1.4;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+/* 📱 Mobile perfection */
+/* 📱 Mobile: show FULL image */
+@media (max-width: 576px) {
+  .gallery-card {
+    height: auto;                 /* 👈 let card grow */
+    aspect-ratio: 3 / 4;          /* nice portrait ratio */
+  }
+
+  .gallery-card img {
+    object-fit: contain;          /* 👈 full image */
+    padding: 6px;
+    background: white;
+  }
+
+  .overlay {
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.35),
+      transparent
+    );
+    padding: 14px;
+  }
+
+  .memory-text {
+    font-size: 0.75rem;
+    color: #fff;
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.6);
+  }
 }

@@ -12,45 +12,66 @@
     Your browser does not support the audio element.
   </audio>
 
-  <!-- 🌸 Falling Petals -->
   <div class="petals"></div>
 
-  <!-- 💍 Hero Content -->
   <div class="hero-content">
-
-    <!-- 💍 Monogram -->
     <div class="mb-4">
       <div
         class="mx-auto mb-2 w-20 h-20 rounded-full border-4 border-lovePink flex items-center justify-center text-lovePink font-bold text-2xl shadow-lg bg-white"
       >
-        S <span class="mx-1">&</span> N
+        N <span class="mx-1">&</span> S
       </div>
       <p class="text-gray-700 font-medium">
-        Sravani & Narendra
+        Narendra & Sravani
       </p>
     </div>
-
     <span class="badge">✨ 1st Wedding Anniversary ✨</span>
-
     <h1 class="hero-title">
       One Year Married <span>❤️</span>
     </h1>
-
     <p class="hero-subtitle">
       Celebrating a year of love, laughter, and unforgettable moments together
     </p>
-
     <p class="hero-dates">
       16 Feb 2025 <span>—</span> 16 Feb 2026
     </p>
-
-    <button class="hero-btn">
+    <button class="hero-btn" (click)="openLovePopup()">
       Relive Our Love
     </button>
   </div>
-
   <div class="scroll-indicator">
     ❤️
   </div>
-
 </section>
+<p-dialog
+  header="💖 My Forever Love 💖"
+  [(visible)]="showLoveDialog"
+  [modal]="true"
+  [dismissableMask]="true"
+  [draggable]="false"
+  [resizable]="false"
+  [closable]="true"
+  [style]="{ width: '420px' }"
+  styleClass="love-popup-dialog"
+>
+  <div class="love-dialog-content">
+
+    <!-- WHITE TEXT CARD -->
+    <div class="love-text-card">
+  <p class="typewriter">
+    From the day we met, my heart knew it was you.<br />
+    Every moment with you feels warm, safe, and happy.<br /><br />
+
+    On 16th February 2025, I chose you forever,<br />
+    <span class="highlight-name">Narendra Prasad 💖</span><br /><br />
+
+    Thank you for your love, your care, and your smile.<br />
+    One year down, forever to go.
+  </p>
+
+  <p class="signature">Yours, Always  
+Sravani 💞</p>
+</div>
+
+  </div>
+</p-dialog>

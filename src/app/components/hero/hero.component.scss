@@ -110,3 +110,130 @@
   from { transform: translateY(-100px); }
   to { transform: translateY(100vh); }
 }
+/* Overlay */
+.love-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 182, 193, 0.35);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+/* Popup Card */
+.love-popup {
+  background: linear-gradient(135deg, #fff, #ffe4ec);
+  padding: 2.5rem;
+  border-radius: 24px;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 30px 60px rgba(244, 114, 182, 0.4);
+  animation: popIn 0.5s ease;
+  position: relative;
+}
+
+/* Title */
+.love-popup h2 {
+  color: #f472b6;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+/* Message */
+.love-popup p {
+  color: #374151;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* Signature */
+.signature {
+  margin-top: 1.5rem;
+  font-style: italic;
+  color: #f472b6;
+  font-weight: 600;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #f472b6;
+}
+
+/* Animation */
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+/* Header: title left, close icon right */
+/* Header: title left, close icon right */
+:host ::ng-deep .love-popup-dialog .p-dialog-header {
+  background: white;
+  color: #f472b6;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border-bottom: none;
+  border-radius: 16px 16px 0 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 👈 KEY LINE */
+  padding: 1rem 1.25rem;
+}
+
+/* Title stays left */
+:host ::ng-deep .love-popup-dialog .p-dialog-title {
+  margin: 0;
+}
+
+/* Close icon stays right */
+:host ::ng-deep .love-popup-dialog .p-dialog-header-close {
+  margin-left: auto;
+  color: #f472b6;
+}
+
+/* Optional hover effect */
+:host ::ng-deep .love-popup-dialog .p-dialog-header-close:hover {
+  background: rgba(244, 114, 182, 0.15);
+  border-radius: 50%;
+}
+:host ::ng-deep .p-dialog-mask {
+  background: rgba(0, 0, 0, 0.45); /* NOT white */
+  backdrop-filter: blur(4px);
+}
+/* White card for text content */
+.love-text-card {
+  background: #f5dae5; 
+  border-radius: 0px 0px 16px 16px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(244, 114, 182, 0.25);
+}
+
+/* Improve text contrast */
+.love-text-card p {
+  color: #374151;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* Signature spacing */
+.love-text-card .signature {
+  margin-top: 1.25rem;
+  font-style: italic;
+  font-weight: 600;
+  color: #f472b6;
+}

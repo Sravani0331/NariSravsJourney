@@ -1,11 +1,13 @@
 .photo-unite {
-    min-height: 100vh;
     background: linear-gradient(180deg, #fde2e4, #fff);
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 20px;
 }
+
 
 .photo-stage {
     position: relative;
@@ -14,6 +16,7 @@
     overflow: hidden;
     cursor: pointer;
 }
+
 
 .half.hide {
     opacity: 0;
@@ -178,7 +181,7 @@
 
   .toggle-btn {
     margin-top: 20px;
-    padding: 12px 28px;
+    padding: 9px 9px;
     font-size: 0.95rem;
   }
 }

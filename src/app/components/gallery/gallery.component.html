@@ -1,11 +1,24 @@
 <div class="container py-5">
-  <h2 class="text-center display-6 fw-bold mb-5 text-pink-600"> Our Memories 📸</h2>
+  <h2 class="text-center display-6 fw-bold mb-5 text-pink-600">
+    Our Memories 📸
+  </h2>
+
   <div class="row g-4">
-    <div class="col-6 col-md-4" *ngFor="let item of memories; let i = index">
+    <div
+      class="col-6 col-md-4"
+      *ngFor="let item of memories; let i = index"
+    >
       <div class="gallery-card">
-        <img src="images/p{{ i + 1 }}.jpeg" alt="{{ item.month }}">
-        <div class="month-label">{{ item.month }}</div>
-        <div class="memory-text">{{ item.text }}</div>
+        <img
+          src="images/p{{ i + 1 }}.jpeg"
+          alt="{{ item.month }}"
+          loading="lazy"
+        />
+
+        <div class="overlay">
+          <div class="month-label">{{ item.month }}</div>
+          <div class="memory-text">{{ item.text }}</div>
+        </div>
       </div>
     </div>
   </div>
