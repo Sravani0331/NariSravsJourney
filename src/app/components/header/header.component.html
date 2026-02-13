@@ -1,0 +1,74 @@
+<nav
+  class="fixed top-0 left-0 w-full z-40
+         bg-white md:bg-transparent flex items-center
+         shadow-sm md:shadow-none">
+
+
+  <!-- ===== TOP BAR CONTENT ===== -->
+  <div class="relative flex items-center justify-center px-4 py-4">
+
+  <!-- MOBILE HAMBURGER (LEFT) -->
+  <button
+    class="md:hidden absolute left-4
+           text-lovePink text-3xl
+           bg-white rounded-full
+           w-11 h-11 flex items-center justify-center shadow-md"
+    (click)="isMenuOpen = true">
+    ☰
+  </button>
+<div
+    *ngIf="isMenuOpen"
+    class="fixed inset-0 bg-black/60 z-40 md:hidden"
+    (click)="isMenuOpen = false">
+  </div>
+
+  <div
+    class="fixed top-0 left-0 h-full z-50 md:hidden
+           w-[70%] max-w-xs bg-white
+           shadow-2xl
+           transform transition-transform duration-300 ease-in-out"
+    [class.-translate-x-full]="!isMenuOpen"
+    [class.translate-x-0]="isMenuOpen">
+
+    <div class="px-6 py-6 border-b border-pink-100">
+      <h2 class="text-lovePink text-xl font-bold">💖 NariSravs</h2>
+      <p class="text-xs text-pink-400 mt-1">Our Forever Love Story</p>
+    </div>
+    <ul class="flex flex-col gap-3 px-6 py-6 text-lovePink font-medium">
+      <li><a class="sidebar-link" (click)="scrollTo('hero'); isMenuOpen=false">🏠 Home</a></li>
+      <li><a class="sidebar-link" (click)="scrollTo('story'); isMenuOpen=false">💞 Our Story</a></li>
+      <li><a class="sidebar-link" (click)="scrollTo('about'); isMenuOpen=false">💑 About Us</a></li>
+      <li><a class="sidebar-link" (click)="scrollTo('gallery'); isMenuOpen=false">📸 Gallery</a></li>
+      <li><a class="sidebar-link" (click)="scrollTo('wedding'); isMenuOpen=false">💍 Wedding</a></li>
+      <li><a class="sidebar-link" (click)="scrollTo('love-letter'); isMenuOpen=false">💌 Love Letter</a></li>
+    </ul>
+  </div>
+
+</div>
+<div>
+    
+  <!-- DESKTOP MENU (PERFECTLY CENTERED) -->
+  <ul
+    class="hidden md:flex gap-10 text-lovePink font-medium text-base">
+    <li><a (click)="scrollTo('hero')" class="nav-link">🏠 <span class="header-text">Home</span></a></li>
+    <li><a (click)="scrollTo('story')" class="nav-link">💞 <span class="header-text">Our Story</span></a></li>
+    <li><a (click)="scrollTo('about')" class="nav-link">💑 <span class="header-text">About Us</span></a></li>
+    <li><a (click)="scrollTo('gallery')" class="nav-link">📸 <span class="header-text">Gallery</span></a></li>
+    <li><a (click)="scrollTo('wedding')" class="nav-link">💍 <span class="header-text">Wedding</span></a></li>
+    <li><a (click)="scrollTo('love-letter')" class="nav-link">💌 <span class="header-text">Love Letter</span></a></li>
+  </ul>
+</div>
+  
+  
+  <button
+    id="musicToggle"
+    class="fixed right-5 z-30 bg-white/80 backdrop-blur px-4 py-2 rounded-full shadow-lg flex items-center gap-2 text-lovePink"
+  >
+    🎶 <span>Play Music</span>
+  </button>
+
+  <audio id="bgMusic" loop preload="auto">
+    <source src="music/inkem-inkem.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+</nav>
